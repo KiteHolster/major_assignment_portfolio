@@ -1,0 +1,13 @@
+﻿body {
+    font-family: Helvetica;
+}
+
+    body nav ul li .nav-link {
+        color: #3a5aa8;
+        font-weight: 700;
+    }
+
+body nav ul li .nav-link:hover {
+    color: #bf4d29;
+    
+}
