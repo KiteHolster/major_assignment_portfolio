@@ -214,6 +214,7 @@
     <Content Include="Content\image\logo_icon\16_16.png" />
     <Content Include="Content\image\logo_icon\32_32.png" />
     <Content Include="Content\image\logo_icon\64_64.png" />
+    <Content Include="Content\image\background_images\section_1.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
