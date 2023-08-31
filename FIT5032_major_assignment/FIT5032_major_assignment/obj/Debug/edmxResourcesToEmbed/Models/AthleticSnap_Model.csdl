@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AthleticSnap_Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="AthleticSnap_ModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Users" EntityType="AthleticSnap_Model.User" />
+    <EntitySet Name="PatientBookings" EntityType="AthleticSnap_Model.PatientBooking" />
+    <AssociationSet Name="UserPatientBooking" Association="AthleticSnap_Model.UserPatientBooking">
+      <End Role="User" EntitySet="Users" />
+      <End Role="PatientBooking" EntitySet="PatientBookings" />
+    </AssociationSet>
+    <EntitySet Name="Bookings" EntityType="AthleticSnap_Model.Booking" />
+    <AssociationSet Name="BookingPatientBooking" Association="AthleticSnap_Model.BookingPatientBooking">
+      <End Role="Booking" EntitySet="Bookings" />
+      <End Role="PatientBooking" EntitySet="PatientBookings" />
+    </AssociationSet>
+    <AssociationSet Name="PatientPatientBooking" Association="AthleticSnap_Model.PatientPatientBooking">
+      <End Role="Patient" EntitySet="Users" />
+      <End Role="PatientBooking" EntitySet="PatientBookings" />
+    </AssociationSet>
+    <AssociationSet Name="DoctorPatientBooking" Association="AthleticSnap_Model.DoctorPatientBooking">
+      <End Role="Doctor" EntitySet="Users" />
+      <End Role="PatientBooking" EntitySet="PatientBookings" />
+    </AssociationSet>
+    <AssociationSet Name="RadiographerPatientBooking" Association="AthleticSnap_Model.RadiographerPatientBooking">
+      <End Role="Radiographer" EntitySet="Users" />
+      <End Role="PatientBooking" EntitySet="PatientBookings" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="PatientBookings" Relationship="AthleticSnap_Model.UserPatientBooking" FromRole="User" ToRole="PatientBooking" />
+  </EntityType>
+  <EntityType Name="Patient" BaseType="AthleticSnap_Model.User">
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="PatientBooking1" Relationship="AthleticSnap_Model.PatientPatientBooking" FromRole="Patient" ToRole="PatientBooking" />
+  </EntityType>
+  <EntityType Name="Doctor" BaseType="AthleticSnap_Model.User">
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="PatientBookings1" Relationship="AthleticSnap_Model.DoctorPatientBooking" FromRole="Doctor" ToRole="PatientBooking" />
+  </EntityType>
+  <EntityType Name="Radiographer" BaseType="AthleticSnap_Model.User">
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="PatientBooking" Relationship="AthleticSnap_Model.RadiographerPatientBooking" FromRole="Radiographer" ToRole="PatientBooking" />
+  </EntityType>
+  <EntityType Name="Customer_Service" BaseType="AthleticSnap_Model.User">
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="PatientBooking">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="User" Relationship="AthleticSnap_Model.UserPatientBooking" FromRole="PatientBooking" ToRole="User" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Booking" Relationship="AthleticSnap_Model.BookingPatientBooking" FromRole="PatientBooking" ToRole="Booking" />
+    <Property Name="BookingId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Patient" Relationship="AthleticSnap_Model.PatientPatientBooking" FromRole="PatientBooking" ToRole="Patient" />
+    <NavigationProperty Name="Doctor" Relationship="AthleticSnap_Model.DoctorPatientBooking" FromRole="PatientBooking" ToRole="Doctor" />
+    <Property Name="DoctorId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Radiographer" Relationship="AthleticSnap_Model.RadiographerPatientBooking" FromRole="PatientBooking" ToRole="Radiographer" />
+  </EntityType>
+  <Association Name="UserPatientBooking">
+    <End Type="AthleticSnap_Model.User" Role="User" Multiplicity="1" />
+    <End Type="AthleticSnap_Model.PatientBooking" Role="PatientBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PatientBooking">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Booking">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="PatientBookings" Relationship="AthleticSnap_Model.BookingPatientBooking" FromRole="Booking" ToRole="PatientBooking" />
+  </EntityType>
+  <Association Name="BookingPatientBooking">
+    <End Type="AthleticSnap_Model.Booking" Role="Booking" Multiplicity="1" />
+    <End Type="AthleticSnap_Model.PatientBooking" Role="PatientBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Booking">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PatientBooking">
+        <PropertyRef Name="BookingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CT_Scan" BaseType="AthleticSnap_Model.Booking">
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="Consultation" BaseType="AthleticSnap_Model.Booking">
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <Association Name="PatientPatientBooking">
+    <End Type="AthleticSnap_Model.Patient" Role="Patient" Multiplicity="1" />
+    <End Type="AthleticSnap_Model.PatientBooking" Role="PatientBooking" Multiplicity="1" />
+  </Association>
+  <Association Name="DoctorPatientBooking">
+    <End Type="AthleticSnap_Model.Doctor" Role="Doctor" Multiplicity="1" />
+    <End Type="AthleticSnap_Model.PatientBooking" Role="PatientBooking" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PatientBooking">
+        <PropertyRef Name="DoctorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RadiographerPatientBooking">
+    <End Type="AthleticSnap_Model.Radiographer" Role="Radiographer" Multiplicity="1" />
+    <End Type="AthleticSnap_Model.PatientBooking" Role="PatientBooking" Multiplicity="1" />
+  </Association>
+</Schema>

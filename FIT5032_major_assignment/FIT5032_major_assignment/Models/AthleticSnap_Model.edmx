@@ -1,0 +1,883 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AthleticSnap_Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AthleticSnap_ModelStoreContainer">
+    <EntitySet Name="Bookings" EntityType="AthleticSnap_Model.Store.Bookings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Testimonials" EntityType="AthleticSnap_Model.Store.Testimonials" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Locations" EntityType="AthleticSnap_Model.Store.Locations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users" EntityType="AthleticSnap_Model.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Roles" EntityType="AthleticSnap_Model.Store.Roles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users_Patient" EntityType="AthleticSnap_Model.Store.Users_Patient" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users_Radiographer" EntityType="AthleticSnap_Model.Store.Users_Radiographer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bookings_CT_Scan" EntityType="AthleticSnap_Model.Store.Bookings_CT_Scan" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users_Doctor" EntityType="AthleticSnap_Model.Store.Users_Doctor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Bookings_Consultation" EntityType="AthleticSnap_Model.Store.Bookings_Consultation" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Users_Customer_Service" EntityType="AthleticSnap_Model.Store.Users_Customer_Service" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="PatientBooking" Association="AthleticSnap_Model.Store.PatientBooking">
+      <End Role="Patient" EntitySet="Users_Patient" />
+      <End Role="Booking" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="RadiographerCT_Scan" Association="AthleticSnap_Model.Store.RadiographerCT_Scan">
+      <End Role="Radiographer" EntitySet="Users_Radiographer" />
+      <End Role="CT_Scan" EntitySet="Bookings_CT_Scan" />
+    </AssociationSet>
+    <AssociationSet Name="DoctorConsultation" Association="AthleticSnap_Model.Store.DoctorConsultation">
+      <End Role="Doctor" EntitySet="Users_Doctor" />
+      <End Role="Consultation" EntitySet="Bookings_Consultation" />
+    </AssociationSet>
+    <AssociationSet Name="DoctorCT_Scan" Association="AthleticSnap_Model.Store.DoctorCT_Scan">
+      <End Role="Doctor" EntitySet="Users_Doctor" />
+      <End Role="CT_Scan" EntitySet="Bookings_CT_Scan" />
+    </AssociationSet>
+    <AssociationSet Name="PatientRadiographer" Association="AthleticSnap_Model.Store.PatientRadiographer">
+      <End Role="Patient" EntitySet="Users_Patient" />
+      <End Role="Radiographer" EntitySet="Users_Radiographer" />
+    </AssociationSet>
+    <AssociationSet Name="PatientDoctor" Association="AthleticSnap_Model.Store.PatientDoctor">
+      <End Role="Patient" EntitySet="Users_Patient" />
+      <End Role="Doctor" EntitySet="Users_Doctor" />
+    </AssociationSet>
+    <AssociationSet Name="Customer_ServiceBooking" Association="AthleticSnap_Model.Store.Customer_ServiceBooking">
+      <End Role="Customer_Service" EntitySet="Users_Customer_Service" />
+      <End Role="Booking" EntitySet="Bookings" />
+    </AssociationSet>
+    <AssociationSet Name="TestimonialPatient" Association="AthleticSnap_Model.Store.TestimonialPatient">
+      <End Role="Testimonial" EntitySet="Testimonials" />
+      <End Role="Patient" EntitySet="Users_Patient" />
+    </AssociationSet>
+    <AssociationSet Name="TestimonialDoctor" Association="AthleticSnap_Model.Store.TestimonialDoctor">
+      <End Role="Testimonial" EntitySet="Testimonials" />
+      <End Role="Doctor" EntitySet="Users_Doctor" />
+    </AssociationSet>
+    <AssociationSet Name="TestimonialRadiographer" Association="AthleticSnap_Model.Store.TestimonialRadiographer">
+      <End Role="Testimonial" EntitySet="Testimonials" />
+      <End Role="Radiographer" EntitySet="Users_Radiographer" />
+    </AssociationSet>
+    <AssociationSet Name="BookingLocation" Association="AthleticSnap_Model.Store.BookingLocation">
+      <End Role="Booking" EntitySet="Bookings" />
+      <End Role="Location" EntitySet="Locations" />
+    </AssociationSet>
+    <AssociationSet Name="RoleUser" Association="AthleticSnap_Model.Store.RoleUser">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_inherits_User" Association="AthleticSnap_Model.Store.FK_Patient_inherits_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Patient" EntitySet="Users_Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Radiographer_inherits_User" Association="AthleticSnap_Model.Store.FK_Radiographer_inherits_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Radiographer" EntitySet="Users_Radiographer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CT_Scan_inherits_Booking" Association="AthleticSnap_Model.Store.FK_CT_Scan_inherits_Booking">
+      <End Role="Booking" EntitySet="Bookings" />
+      <End Role="CT_Scan" EntitySet="Bookings_CT_Scan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctor_inherits_User" Association="AthleticSnap_Model.Store.FK_Doctor_inherits_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Doctor" EntitySet="Users_Doctor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Consultation_inherits_Booking" Association="AthleticSnap_Model.Store.FK_Consultation_inherits_Booking">
+      <End Role="Booking" EntitySet="Bookings" />
+      <End Role="Consultation" EntitySet="Bookings_Consultation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Customer_Service_inherits_User" Association="AthleticSnap_Model.Store.FK_Customer_Service_inherits_User">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Customer_Service" EntitySet="Users_Customer_Service" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Bookings">
+    <Key>
+      <PropertyRef Name="BookingId" />
+    </Key>
+    <Property Name="BookingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BookingDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ScheduledDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Patient_UserId" Type="int" Nullable="false" />
+    <Property Name="Customer_Service_UserId" Type="int" Nullable="false" />
+    <Property Name="Location_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Testimonials">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Rating" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Patient_UserId" Type="int" Nullable="false" />
+    <Property Name="Doctor_UserId" Type="int" Nullable="false" />
+    <Property Name="Radiographer_UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoomName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Equipment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Availability" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RoleRoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users_Patient">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DateOfBirth" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EmergencyContact" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MedicalRecordNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Radiographer_UserId" Type="int" Nullable="false" />
+    <Property Name="Doctor_UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users_Radiographer">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Certification" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bookings_CT_Scan">
+    <Key>
+      <PropertyRef Name="BookingId" />
+    </Key>
+    <Property Name="ScanId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Results" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Duration" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ContrastUsed" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ScanType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BookingId" Type="int" Nullable="false" />
+    <Property Name="Radiographer_UserId" Type="int" Nullable="false" />
+    <Property Name="Referral_UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users_Doctor">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Specialization" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LicenseNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bookings_Consultation">
+    <Key>
+      <PropertyRef Name="BookingId" />
+    </Key>
+    <Property Name="ConsultationId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Purpose" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Diagnosis" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Prescriptions" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BookingId" Type="int" Nullable="false" />
+    <Property Name="Doctor_UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users_Customer_Service">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Notes" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ShiftTimes" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="PatientBooking">
+    <End Role="Patient" Type="AthleticSnap_Model.Store.Users_Patient" Multiplicity="1" />
+    <End Role="Booking" Type="AthleticSnap_Model.Store.Bookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="Patient_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RadiographerCT_Scan">
+    <End Role="Radiographer" Type="AthleticSnap_Model.Store.Users_Radiographer" Multiplicity="1" />
+    <End Role="CT_Scan" Type="AthleticSnap_Model.Store.Bookings_CT_Scan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Radiographer">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="CT_Scan">
+        <PropertyRef Name="Radiographer_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DoctorConsultation">
+    <End Role="Doctor" Type="AthleticSnap_Model.Store.Users_Doctor" Multiplicity="1" />
+    <End Role="Consultation" Type="AthleticSnap_Model.Store.Bookings_Consultation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Consultation">
+        <PropertyRef Name="Doctor_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="DoctorCT_Scan">
+    <End Role="Doctor" Type="AthleticSnap_Model.Store.Users_Doctor" Multiplicity="1" />
+    <End Role="CT_Scan" Type="AthleticSnap_Model.Store.Bookings_CT_Scan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="CT_Scan">
+        <PropertyRef Name="Referral_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PatientRadiographer">
+    <End Role="Patient" Type="AthleticSnap_Model.Store.Users_Patient" Multiplicity="*" />
+    <End Role="Radiographer" Type="AthleticSnap_Model.Store.Users_Radiographer" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Radiographer">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="Radiographer_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PatientDoctor">
+    <End Role="Patient" Type="AthleticSnap_Model.Store.Users_Patient" Multiplicity="*" />
+    <End Role="Doctor" Type="AthleticSnap_Model.Store.Users_Doctor" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="Doctor_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Customer_ServiceBooking">
+    <End Role="Customer_Service" Type="AthleticSnap_Model.Store.Users_Customer_Service" Multiplicity="1" />
+    <End Role="Booking" Type="AthleticSnap_Model.Store.Bookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer_Service">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="Customer_Service_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TestimonialPatient">
+    <End Role="Testimonial" Type="AthleticSnap_Model.Store.Testimonials" Multiplicity="*" />
+    <End Role="Patient" Type="AthleticSnap_Model.Store.Users_Patient" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Testimonial">
+        <PropertyRef Name="Patient_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TestimonialDoctor">
+    <End Role="Testimonial" Type="AthleticSnap_Model.Store.Testimonials" Multiplicity="*" />
+    <End Role="Doctor" Type="AthleticSnap_Model.Store.Users_Doctor" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Testimonial">
+        <PropertyRef Name="Doctor_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TestimonialRadiographer">
+    <End Role="Testimonial" Type="AthleticSnap_Model.Store.Testimonials" Multiplicity="*" />
+    <End Role="Radiographer" Type="AthleticSnap_Model.Store.Users_Radiographer" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Radiographer">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Testimonial">
+        <PropertyRef Name="Radiographer_UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="BookingLocation">
+    <End Role="Booking" Type="AthleticSnap_Model.Store.Bookings" Multiplicity="*" />
+    <End Role="Location" Type="AthleticSnap_Model.Store.Locations" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Booking">
+        <PropertyRef Name="Location_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RoleUser">
+    <End Role="Role" Type="AthleticSnap_Model.Store.Roles" Multiplicity="1" />
+    <End Role="User" Type="AthleticSnap_Model.Store.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleRoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_inherits_User">
+    <End Role="User" Type="AthleticSnap_Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Patient" Type="AthleticSnap_Model.Store.Users_Patient" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Radiographer_inherits_User">
+    <End Role="User" Type="AthleticSnap_Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Radiographer" Type="AthleticSnap_Model.Store.Users_Radiographer" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Radiographer">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CT_Scan_inherits_Booking">
+    <End Role="Booking" Type="AthleticSnap_Model.Store.Bookings" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CT_Scan" Type="AthleticSnap_Model.Store.Bookings_CT_Scan" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Booking">
+        <PropertyRef Name="BookingId" />
+      </Principal>
+      <Dependent Role="CT_Scan">
+        <PropertyRef Name="BookingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctor_inherits_User">
+    <End Role="User" Type="AthleticSnap_Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Doctor" Type="AthleticSnap_Model.Store.Users_Doctor" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Doctor">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Consultation_inherits_Booking">
+    <End Role="Booking" Type="AthleticSnap_Model.Store.Bookings" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Consultation" Type="AthleticSnap_Model.Store.Bookings_Consultation" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Booking">
+        <PropertyRef Name="BookingId" />
+      </Principal>
+      <Dependent Role="Consultation">
+        <PropertyRef Name="BookingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Customer_Service_inherits_User">
+    <End Role="User" Type="AthleticSnap_Model.Store.Users" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Customer_Service" Type="AthleticSnap_Model.Store.Users_Customer_Service" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="Customer_Service">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AthleticSnap_Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="AthleticSnap_ModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bookings" EntityType="AthleticSnap_Model.Booking" />
+          <EntitySet Name="Testimonials" EntityType="AthleticSnap_Model.Testimonial" />
+          <EntitySet Name="Locations" EntityType="AthleticSnap_Model.Location" />
+          <AssociationSet Name="PatientBooking" Association="AthleticSnap_Model.PatientBooking">
+            <End Role="Patient" EntitySet="Users" />
+            <End Role="Booking" EntitySet="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="RadiographerCT_Scan" Association="AthleticSnap_Model.RadiographerCT_Scan">
+            <End Role="Radiographer" EntitySet="Users" />
+            <End Role="CT_Scan" EntitySet="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="DoctorConsultation" Association="AthleticSnap_Model.DoctorConsultation">
+            <End Role="Doctor" EntitySet="Users" />
+            <End Role="Consultation" EntitySet="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="DoctorCT_Scan" Association="AthleticSnap_Model.DoctorCT_Scan">
+            <End Role="Doctor" EntitySet="Users" />
+            <End Role="CT_Scan" EntitySet="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="PatientRadiographer" Association="AthleticSnap_Model.PatientRadiographer">
+            <End Role="Patient" EntitySet="Users" />
+            <End Role="Radiographer" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="PatientDoctor" Association="AthleticSnap_Model.PatientDoctor">
+            <End Role="Patient" EntitySet="Users" />
+            <End Role="Doctor" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="Customer_ServiceBooking" Association="AthleticSnap_Model.Customer_ServiceBooking">
+            <End Role="Customer_Service" EntitySet="Users" />
+            <End Role="Booking" EntitySet="Bookings" />
+          </AssociationSet>
+          <AssociationSet Name="TestimonialPatient" Association="AthleticSnap_Model.TestimonialPatient">
+            <End Role="Testimonial" EntitySet="Testimonials" />
+            <End Role="Patient" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="TestimonialDoctor" Association="AthleticSnap_Model.TestimonialDoctor">
+            <End Role="Testimonial" EntitySet="Testimonials" />
+            <End Role="Doctor" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="TestimonialRadiographer" Association="AthleticSnap_Model.TestimonialRadiographer">
+            <End Role="Testimonial" EntitySet="Testimonials" />
+            <End Role="Radiographer" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="BookingLocation" Association="AthleticSnap_Model.BookingLocation">
+            <End Role="Booking" EntitySet="Bookings" />
+            <End Role="Location" EntitySet="Locations" />
+          </AssociationSet>
+          <EntitySet Name="Users" EntityType="AthleticSnap_Model.User" />
+          <EntitySet Name="Roles" EntityType="AthleticSnap_Model.Role" />
+          <AssociationSet Name="RoleUser" Association="AthleticSnap_Model.RoleUser">
+            <End Role="Role" EntitySet="Roles" />
+            <End Role="User" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Patient" BaseType="AthleticSnap_Model.User">
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DateOfBirth" Type="String" Nullable="false" />
+          <NavigationProperty Name="Bookings" Relationship="AthleticSnap_Model.PatientBooking" FromRole="Patient" ToRole="Booking" />
+          <NavigationProperty Name="Radiographer" Relationship="AthleticSnap_Model.PatientRadiographer" FromRole="Patient" ToRole="Radiographer" />
+          <NavigationProperty Name="Doctor" Relationship="AthleticSnap_Model.PatientDoctor" FromRole="Patient" ToRole="Doctor" />
+          <NavigationProperty Name="Testimonials" Relationship="AthleticSnap_Model.TestimonialPatient" FromRole="Patient" ToRole="Testimonial" />
+          <Property Name="EmergencyContact" Type="String" Nullable="false" />
+          <Property Name="MedicalRecordNumber" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Doctor" BaseType="AthleticSnap_Model.User">
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Specialization" Type="String" Nullable="false" />
+          <NavigationProperty Name="Consultations" Relationship="AthleticSnap_Model.DoctorConsultation" FromRole="Doctor" ToRole="Consultation" />
+          <NavigationProperty Name="CT_Scan" Relationship="AthleticSnap_Model.DoctorCT_Scan" FromRole="Doctor" ToRole="CT_Scan" />
+          <NavigationProperty Name="Patients" Relationship="AthleticSnap_Model.PatientDoctor" FromRole="Doctor" ToRole="Patient" />
+          <NavigationProperty Name="Testimonial" Relationship="AthleticSnap_Model.TestimonialDoctor" FromRole="Doctor" ToRole="Testimonial" />
+          <Property Name="LicenseNumber" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Radiographer" BaseType="AthleticSnap_Model.User">
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="CT_Scan" Relationship="AthleticSnap_Model.RadiographerCT_Scan" FromRole="Radiographer" ToRole="CT_Scan" />
+          <NavigationProperty Name="Patients" Relationship="AthleticSnap_Model.PatientRadiographer" FromRole="Radiographer" ToRole="Patient" />
+          <NavigationProperty Name="Testimonial" Relationship="AthleticSnap_Model.TestimonialRadiographer" FromRole="Radiographer" ToRole="Testimonial" />
+          <Property Name="Certification" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer_Service" BaseType="AthleticSnap_Model.User">
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Bookings" Relationship="AthleticSnap_Model.Customer_ServiceBooking" FromRole="Customer_Service" ToRole="Booking" />
+          <Property Name="Notes" Type="String" Nullable="false" />
+          <Property Name="ShiftTimes" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Booking">
+          <Key>
+            <PropertyRef Name="BookingId" />
+          </Key>
+          <Property Name="BookingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Patient" Relationship="AthleticSnap_Model.PatientBooking" FromRole="Booking" ToRole="Patient" />
+          <NavigationProperty Name="Customer_Service" Relationship="AthleticSnap_Model.Customer_ServiceBooking" FromRole="Booking" ToRole="Customer_Service" />
+          <NavigationProperty Name="Location" Relationship="AthleticSnap_Model.BookingLocation" FromRole="Booking" ToRole="Location" />
+          <Property Name="BookingDate" Type="String" Nullable="false" />
+          <Property Name="ScheduledDate" Type="String" Nullable="false" />
+          <Property Name="Status" Type="String" Nullable="false" />
+          <Property Name="Notes" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CT_Scan" BaseType="AthleticSnap_Model.Booking">
+          <Property Name="ScanId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Radiographer" Relationship="AthleticSnap_Model.RadiographerCT_Scan" FromRole="CT_Scan" ToRole="Radiographer" />
+          <NavigationProperty Name="Referral" Relationship="AthleticSnap_Model.DoctorCT_Scan" FromRole="CT_Scan" ToRole="Doctor" />
+          <Property Name="Results" Type="String" Nullable="false" />
+          <Property Name="Duration" Type="String" Nullable="false" />
+          <Property Name="ContrastUsed" Type="String" Nullable="false" />
+          <Property Name="ScanType" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Consultation" BaseType="AthleticSnap_Model.Booking">
+          <Property Name="ConsultationId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Doctor" Relationship="AthleticSnap_Model.DoctorConsultation" FromRole="Consultation" ToRole="Doctor" />
+          <Property Name="Purpose" Type="String" Nullable="false" />
+          <Property Name="Diagnosis" Type="String" Nullable="false" />
+          <Property Name="Prescriptions" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Testimonial">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Patient" Relationship="AthleticSnap_Model.TestimonialPatient" FromRole="Testimonial" ToRole="Patient" />
+          <NavigationProperty Name="Doctor" Relationship="AthleticSnap_Model.TestimonialDoctor" FromRole="Testimonial" ToRole="Doctor" />
+          <NavigationProperty Name="Radiographer" Relationship="AthleticSnap_Model.TestimonialRadiographer" FromRole="Testimonial" ToRole="Radiographer" />
+          <Property Name="Rating" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="Booking" Relationship="AthleticSnap_Model.BookingLocation" FromRole="Location" ToRole="Booking" />
+          <Property Name="RoomName" Type="String" Nullable="false" />
+          <Property Name="Type" Type="String" Nullable="false" />
+          <Property Name="Equipment" Type="String" Nullable="false" />
+          <Property Name="Status" Type="String" Nullable="false" />
+          <Property Name="Availability" Type="String" Nullable="false" />
+          <Property Name="Notes" Type="String" Nullable="false" />
+        </EntityType>
+        <Association Name="PatientBooking">
+          <End Type="AthleticSnap_Model.Patient" Role="Patient" Multiplicity="1" />
+          <End Type="AthleticSnap_Model.Booking" Role="Booking" Multiplicity="*" />
+        </Association>
+        <Association Name="RadiographerCT_Scan">
+          <End Type="AthleticSnap_Model.Radiographer" Role="Radiographer" Multiplicity="1" />
+          <End Type="AthleticSnap_Model.CT_Scan" Role="CT_Scan" Multiplicity="*" />
+        </Association>
+        <Association Name="DoctorConsultation">
+          <End Type="AthleticSnap_Model.Doctor" Role="Doctor" Multiplicity="1" />
+          <End Type="AthleticSnap_Model.Consultation" Role="Consultation" Multiplicity="*" />
+        </Association>
+        <Association Name="DoctorCT_Scan">
+          <End Type="AthleticSnap_Model.Doctor" Role="Doctor" Multiplicity="1" />
+          <End Type="AthleticSnap_Model.CT_Scan" Role="CT_Scan" Multiplicity="*" />
+        </Association>
+        <Association Name="PatientRadiographer">
+          <End Type="AthleticSnap_Model.Patient" Role="Patient" Multiplicity="*" />
+          <End Type="AthleticSnap_Model.Radiographer" Role="Radiographer" Multiplicity="1" />
+        </Association>
+        <Association Name="PatientDoctor">
+          <End Type="AthleticSnap_Model.Patient" Role="Patient" Multiplicity="*" />
+          <End Type="AthleticSnap_Model.Doctor" Role="Doctor" Multiplicity="1" />
+        </Association>
+        <Association Name="Customer_ServiceBooking">
+          <End Type="AthleticSnap_Model.Customer_Service" Role="Customer_Service" Multiplicity="1" />
+          <End Type="AthleticSnap_Model.Booking" Role="Booking" Multiplicity="*" />
+        </Association>
+        <Association Name="TestimonialPatient">
+          <End Type="AthleticSnap_Model.Testimonial" Role="Testimonial" Multiplicity="*" />
+          <End Type="AthleticSnap_Model.Patient" Role="Patient" Multiplicity="1" />
+        </Association>
+        <Association Name="TestimonialDoctor">
+          <End Type="AthleticSnap_Model.Testimonial" Role="Testimonial" Multiplicity="1" />
+          <End Type="AthleticSnap_Model.Doctor" Role="Doctor" Multiplicity="1" />
+        </Association>
+        <Association Name="TestimonialRadiographer">
+          <End Type="AthleticSnap_Model.Testimonial" Role="Testimonial" Multiplicity="1" />
+          <End Type="AthleticSnap_Model.Radiographer" Role="Radiographer" Multiplicity="1" />
+        </Association>
+        <Association Name="BookingLocation">
+          <End Type="AthleticSnap_Model.Booking" Role="Booking" Multiplicity="1" />
+          <End Type="AthleticSnap_Model.Location" Role="Location" Multiplicity="1" />
+        </Association>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" />
+          <Property Name="LastName" Type="String" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="AthleticSnap_Model.RoleUser" FromRole="User" ToRole="Role" />
+          <Property Name="RoleRoleId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="AthleticSnap_Model.RoleUser" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <Association Name="RoleUser">
+          <End Type="AthleticSnap_Model.Role" Role="Role" Multiplicity="1" />
+          <End Type="AthleticSnap_Model.User" Role="User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="RoleRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AthleticSnap_ModelStoreContainer" CdmEntityContainer="AthleticSnap_ModelContainer">
+    <EntitySetMapping Name="Bookings">
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Booking)">
+        <MappingFragment StoreEntitySet="Bookings">
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
+          <ScalarProperty Name="ScheduledDate" ColumnName="ScheduledDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.CT_Scan)">
+        <MappingFragment StoreEntitySet="Bookings_CT_Scan">
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="ScanId" ColumnName="ScanId" />
+          <ScalarProperty Name="Results" ColumnName="Results" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="ContrastUsed" ColumnName="ContrastUsed" />
+          <ScalarProperty Name="ScanType" ColumnName="ScanType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Consultation)">
+        <MappingFragment StoreEntitySet="Bookings_Consultation">
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="ConsultationId" ColumnName="ConsultationId" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+          <ScalarProperty Name="Prescriptions" ColumnName="Prescriptions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Testimonials">
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Testimonial)">
+        <MappingFragment StoreEntitySet="Testimonials">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Location)">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoomName" ColumnName="RoomName" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Equipment" ColumnName="Equipment" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Availability" ColumnName="Availability" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="RoleRoleId" ColumnName="RoleRoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Patient)">
+        <MappingFragment StoreEntitySet="Users_Patient">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="EmergencyContact" ColumnName="EmergencyContact" />
+          <ScalarProperty Name="MedicalRecordNumber" ColumnName="MedicalRecordNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Radiographer)">
+        <MappingFragment StoreEntitySet="Users_Radiographer">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Certification" ColumnName="Certification" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Doctor)">
+        <MappingFragment StoreEntitySet="Users_Doctor">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+          <ScalarProperty Name="LicenseNumber" ColumnName="LicenseNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Customer_Service)">
+        <MappingFragment StoreEntitySet="Users_Customer_Service">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ShiftTimes" ColumnName="ShiftTimes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Role)">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="PatientBooking" TypeName="AthleticSnap_Model.PatientBooking" StoreEntitySet="Bookings">
+      <EndProperty Name="Patient">
+        <ScalarProperty Name="UserId" ColumnName="Patient_UserId" />
+      </EndProperty>
+      <EndProperty Name="Booking">
+        <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RadiographerCT_Scan" TypeName="AthleticSnap_Model.RadiographerCT_Scan" StoreEntitySet="Bookings_CT_Scan">
+      <EndProperty Name="Radiographer">
+        <ScalarProperty Name="UserId" ColumnName="Radiographer_UserId" />
+      </EndProperty>
+      <EndProperty Name="CT_Scan">
+        <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DoctorConsultation" TypeName="AthleticSnap_Model.DoctorConsultation" StoreEntitySet="Bookings_Consultation">
+      <EndProperty Name="Doctor">
+        <ScalarProperty Name="UserId" ColumnName="Doctor_UserId" />
+      </EndProperty>
+      <EndProperty Name="Consultation">
+        <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DoctorCT_Scan" TypeName="AthleticSnap_Model.DoctorCT_Scan" StoreEntitySet="Bookings_CT_Scan">
+      <EndProperty Name="Doctor">
+        <ScalarProperty Name="UserId" ColumnName="Referral_UserId" />
+      </EndProperty>
+      <EndProperty Name="CT_Scan">
+        <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PatientRadiographer" TypeName="AthleticSnap_Model.PatientRadiographer" StoreEntitySet="Users_Patient">
+      <EndProperty Name="Radiographer">
+        <ScalarProperty Name="UserId" ColumnName="Radiographer_UserId" />
+      </EndProperty>
+      <EndProperty Name="Patient">
+        <ScalarProperty Name="UserId" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PatientDoctor" TypeName="AthleticSnap_Model.PatientDoctor" StoreEntitySet="Users_Patient">
+      <EndProperty Name="Doctor">
+        <ScalarProperty Name="UserId" ColumnName="Doctor_UserId" />
+      </EndProperty>
+      <EndProperty Name="Patient">
+        <ScalarProperty Name="UserId" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Customer_ServiceBooking" TypeName="AthleticSnap_Model.Customer_ServiceBooking" StoreEntitySet="Bookings">
+      <EndProperty Name="Customer_Service">
+        <ScalarProperty Name="UserId" ColumnName="Customer_Service_UserId" />
+      </EndProperty>
+      <EndProperty Name="Booking">
+        <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TestimonialPatient" TypeName="AthleticSnap_Model.TestimonialPatient" StoreEntitySet="Testimonials">
+      <EndProperty Name="Patient">
+        <ScalarProperty Name="UserId" ColumnName="Patient_UserId" />
+      </EndProperty>
+      <EndProperty Name="Testimonial">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TestimonialDoctor" TypeName="AthleticSnap_Model.TestimonialDoctor" StoreEntitySet="Testimonials">
+      <EndProperty Name="Doctor">
+        <ScalarProperty Name="UserId" ColumnName="Doctor_UserId" />
+      </EndProperty>
+      <EndProperty Name="Testimonial">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TestimonialRadiographer" TypeName="AthleticSnap_Model.TestimonialRadiographer" StoreEntitySet="Testimonials">
+      <EndProperty Name="Radiographer">
+        <ScalarProperty Name="UserId" ColumnName="Radiographer_UserId" />
+      </EndProperty>
+      <EndProperty Name="Testimonial">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BookingLocation" TypeName="AthleticSnap_Model.BookingLocation" StoreEntitySet="Bookings">
+      <EndProperty Name="Location">
+        <ScalarProperty Name="Id" ColumnName="Location_Id" />
+      </EndProperty>
+      <EndProperty Name="Booking">
+        <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
