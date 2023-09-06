@@ -1,6 +1,199 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Mapping xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs" Space="C-S">
-  <Alias Key="Model" Value="AthleticSnap_Model" />
-  <Alias Key="Target" Value="AthleticSnap_Model.Store" />
-  <EntityContainerMapping CdmEntityContainer="AthleticSnap_ModelContainer" StorageEntityContainer="AthleticSnap_ModelTargetContainer" />
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AthleticSnap_ModelStoreContainer" CdmEntityContainer="AthleticSnap_ModelContainer">
+    <EntitySetMapping Name="Bookings">
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Booking)">
+        <MappingFragment StoreEntitySet="Bookings">
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="BookingDate" ColumnName="BookingDate" />
+          <ScalarProperty Name="ScheduledDate" ColumnName="ScheduledDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.CT_Scan)">
+        <MappingFragment StoreEntitySet="Bookings_CT_Scan">
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="ScanId" ColumnName="ScanId" />
+          <ScalarProperty Name="Results" ColumnName="Results" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="ContrastUsed" ColumnName="ContrastUsed" />
+          <ScalarProperty Name="ScanType" ColumnName="ScanType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Consultation)">
+        <MappingFragment StoreEntitySet="Bookings_Consultation">
+          <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+          <ScalarProperty Name="ConsultationId" ColumnName="ConsultationId" />
+          <ScalarProperty Name="Purpose" ColumnName="Purpose" />
+          <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+          <ScalarProperty Name="Prescriptions" ColumnName="Prescriptions" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Testimonials">
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Testimonial)">
+        <MappingFragment StoreEntitySet="Testimonials">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Location)">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RoomName" ColumnName="RoomName" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Equipment" ColumnName="Equipment" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Availability" ColumnName="Availability" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.User)">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="RoleRoleId" ColumnName="RoleRoleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Patient)">
+        <MappingFragment StoreEntitySet="Users_Patient">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="EmergencyContact" ColumnName="EmergencyContact" />
+          <ScalarProperty Name="MedicalRecordNumber" ColumnName="MedicalRecordNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Radiographer)">
+        <MappingFragment StoreEntitySet="Users_Radiographer">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Certification" ColumnName="Certification" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Doctor)">
+        <MappingFragment StoreEntitySet="Users_Doctor">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Specialization" ColumnName="Specialization" />
+          <ScalarProperty Name="LicenseNumber" ColumnName="LicenseNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Customer_Service)">
+        <MappingFragment StoreEntitySet="Users_Customer_Service">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="ShiftTimes" ColumnName="ShiftTimes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="IsTypeOf(AthleticSnap_Model.Role)">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="PatientBooking" TypeName="AthleticSnap_Model.PatientBooking" StoreEntitySet="Bookings">
+      <EndProperty Name="Patient">
+        <ScalarProperty Name="UserId" ColumnName="Patient_UserId" />
+      </EndProperty>
+      <EndProperty Name="Booking">
+        <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="RadiographerCT_Scan" TypeName="AthleticSnap_Model.RadiographerCT_Scan" StoreEntitySet="Bookings_CT_Scan">
+      <EndProperty Name="Radiographer">
+        <ScalarProperty Name="UserId" ColumnName="Radiographer_UserId" />
+      </EndProperty>
+      <EndProperty Name="CT_Scan">
+        <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DoctorConsultation" TypeName="AthleticSnap_Model.DoctorConsultation" StoreEntitySet="Bookings_Consultation">
+      <EndProperty Name="Doctor">
+        <ScalarProperty Name="UserId" ColumnName="Doctor_UserId" />
+      </EndProperty>
+      <EndProperty Name="Consultation">
+        <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="DoctorCT_Scan" TypeName="AthleticSnap_Model.DoctorCT_Scan" StoreEntitySet="Bookings_CT_Scan">
+      <EndProperty Name="Doctor">
+        <ScalarProperty Name="UserId" ColumnName="Referral_UserId" />
+      </EndProperty>
+      <EndProperty Name="CT_Scan">
+        <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PatientRadiographer" TypeName="AthleticSnap_Model.PatientRadiographer" StoreEntitySet="Users_Patient">
+      <EndProperty Name="Radiographer">
+        <ScalarProperty Name="UserId" ColumnName="Radiographer_UserId" />
+      </EndProperty>
+      <EndProperty Name="Patient">
+        <ScalarProperty Name="UserId" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PatientDoctor" TypeName="AthleticSnap_Model.PatientDoctor" StoreEntitySet="Users_Patient">
+      <EndProperty Name="Doctor">
+        <ScalarProperty Name="UserId" ColumnName="Doctor_UserId" />
+      </EndProperty>
+      <EndProperty Name="Patient">
+        <ScalarProperty Name="UserId" ColumnName="UserId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="Customer_ServiceBooking" TypeName="AthleticSnap_Model.Customer_ServiceBooking" StoreEntitySet="Bookings">
+      <EndProperty Name="Customer_Service">
+        <ScalarProperty Name="UserId" ColumnName="Customer_Service_UserId" />
+      </EndProperty>
+      <EndProperty Name="Booking">
+        <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TestimonialPatient" TypeName="AthleticSnap_Model.TestimonialPatient" StoreEntitySet="Testimonials">
+      <EndProperty Name="Patient">
+        <ScalarProperty Name="UserId" ColumnName="Patient_UserId" />
+      </EndProperty>
+      <EndProperty Name="Testimonial">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TestimonialDoctor" TypeName="AthleticSnap_Model.TestimonialDoctor" StoreEntitySet="Testimonials">
+      <EndProperty Name="Doctor">
+        <ScalarProperty Name="UserId" ColumnName="Doctor_UserId" />
+      </EndProperty>
+      <EndProperty Name="Testimonial">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="TestimonialRadiographer" TypeName="AthleticSnap_Model.TestimonialRadiographer" StoreEntitySet="Testimonials">
+      <EndProperty Name="Radiographer">
+        <ScalarProperty Name="UserId" ColumnName="Radiographer_UserId" />
+      </EndProperty>
+      <EndProperty Name="Testimonial">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="BookingLocation" TypeName="AthleticSnap_Model.BookingLocation" StoreEntitySet="Bookings">
+      <EndProperty Name="Location">
+        <ScalarProperty Name="Id" ColumnName="Location_Id" />
+      </EndProperty>
+      <EndProperty Name="Booking">
+        <ScalarProperty Name="BookingId" ColumnName="BookingId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
 </Mapping>

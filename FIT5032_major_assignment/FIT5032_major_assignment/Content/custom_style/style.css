@@ -1,5 +1,15 @@
 ﻿body {
     font-family: Helvetica;
+    background: linear-gradient(-0.12turn, #2a77be, #3a5aa8);
+    background-attachment: fixed;
+    background-blend-mode: multiply;
+    background-size: cover;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+body nav {
+    background: white;
 }
 
 body nav ul li .nav-link {
@@ -16,11 +26,8 @@ section {
 }
 
 #section1 {
-    background: linear-gradient(-0.12turn, #2a77be, #3a5aa8);
-    background-blend-mode: multiply;
-    background-size: cover;
     height: 600px;
-    text-align: center;
+    text-align: center;  
 }
 
 #section1 h1 {
@@ -37,8 +44,17 @@ section {
 
 #section1 a {
     width: 120px;
-    padding-bottom: 0;
+    padding-bottom: 5px;
     margin-bottom:0;
+}
+
+#section2 {
+    background: white;
+}
+
+#header-section {
+    background: #263C6F;
+    color: white;
 }
 
 footer {
