@@ -13,6 +13,13 @@ namespace FIT5032_major_assignment.Controllers
             return View();
         }
 
+        public ActionResult Services()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -26,5 +33,20 @@ namespace FIT5032_major_assignment.Controllers
 
             return View();
         }
+
+        public ActionResult DiagnosticCtScans()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public ActionResult SpecialisedScans()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
     }
 }

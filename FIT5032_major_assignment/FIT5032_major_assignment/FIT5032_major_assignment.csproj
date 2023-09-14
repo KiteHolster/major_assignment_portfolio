@@ -363,6 +363,9 @@
     <Content Include="Views\Testimonials\Details.cshtml" />
     <Content Include="Views\Testimonials\Edit.cshtml" />
     <Content Include="Views\Testimonials\Index.cshtml" />
+    <Content Include="Views\Home\DiagnosticCTScans.cshtml" />
+    <Content Include="Views\Home\SpecialisedScans.cshtml" />
+    <Content Include="Views\Home\Services.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
