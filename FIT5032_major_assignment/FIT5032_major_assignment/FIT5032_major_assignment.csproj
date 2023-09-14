@@ -251,6 +251,10 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-FIT5032_major_assignment-20230810073254.mdf" />
+    <Content Include="App_Data\aspnet-FIT5032_major_assignment-20230810073254_log.ldf">
+      <DependentUpon>aspnet-FIT5032_major_assignment-20230810073254.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\AthleticSnap.mdf" />
     <Content Include="App_Data\AthleticSnap_log.ldf">
       <DependentUpon>AthleticSnap.mdf</DependentUpon>
@@ -363,6 +367,7 @@
     <Content Include="Views\Testimonials\Details.cshtml" />
     <Content Include="Views\Testimonials\Edit.cshtml" />
     <Content Include="Views\Testimonials\Index.cshtml" />
+    <Content Include="Views\Home\Services.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
