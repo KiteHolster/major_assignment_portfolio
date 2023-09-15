@@ -4,8 +4,6 @@
     background-attachment: fixed;
     background-blend-mode: multiply;
     background-size: cover;
-    padding-left: 10%;
-    padding-right: 10%;
 }
 
 body nav {
@@ -22,7 +20,7 @@ body nav ul li .nav-link:hover {
 }
 
 section {
-    padding: 60px;
+    padding: 30px 100px;
 }
 
 #section1 {
@@ -60,5 +58,9 @@ section {
 footer {
     padding: 60px;
     height: fit-content;
-    background-color: lightgrey;
+    background-color: #FAF3E0;
+}
+
+.sitemap {
+    text-align: center;
 }

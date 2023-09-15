@@ -14,7 +14,7 @@
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm">
         <div class="container">
             <a href="@Url.Action("Index", "Home")" title="IndexView" class="links" style="padding-right:10px;">
-                <img src="~/Content/image/logo/logo_75x200.png"/>
+                <img src="~/Content/image/logo_icon/small.png" />
             </a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -35,13 +35,23 @@
     <div id="main">
         @RenderBody()
         <footer class="row">
-            <section class="col-md-4 col-12" aria-labelledby="gettingStartedTitle">
-                Links
+            <section class="col-md-4 col-12 sitemap" aria-labelledby="gettingStartedTitle">
+                <img src="~/Content/image/logo_icon/medium.png" />
+                <div class="row">
+                    <div class="col-1"></div>
+                    <div class="col-2">
+                        <img src="~/Content/image/icons/icons8-instagram-48.png"/>
+                    </div>
+                    <div class="col-2">
+                        <img src="~/Content/image/icons/icons8-facebook-48.png" />
+                    </div>
+                </div>
+                
             </section>
-            <section class="col-md-4 col-12" aria-labelledby="librariesTitle">
+            <section class="col-md-4 col-12 sitemap" aria-labelledby="librariesTitle">
                 Site Map
             </section>
-            <section class="col-md-4 col-12" aria-labelledby="hostingTitle">
+            <section class="col-md-4 col-12 sitemap" aria-labelledby="hostingTitle">
                 Contact
             </section>
         </footer>
