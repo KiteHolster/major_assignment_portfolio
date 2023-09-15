@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 08/31/2023 15:33:43
+-- Date Created: 09/14/2023 19:00:54
 -- Generated from EDMX file: C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment\Models\AthleticSnap_Model.edmx
 -- --------------------------------------------------
 
@@ -50,8 +50,8 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_BookingLocation]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Bookings] DROP CONSTRAINT [FK_BookingLocation];
 GO
-IF OBJECT_ID(N'[dbo].[FK_UserRole]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[Roles] DROP CONSTRAINT [FK_UserRole];
+IF OBJECT_ID(N'[dbo].[FK_RoleUser]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Users] DROP CONSTRAINT [FK_RoleUser];
 GO
 IF OBJECT_ID(N'[dbo].[FK_Patient_inherits_User]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Users_Patient] DROP CONSTRAINT [FK_Patient_inherits_User];
