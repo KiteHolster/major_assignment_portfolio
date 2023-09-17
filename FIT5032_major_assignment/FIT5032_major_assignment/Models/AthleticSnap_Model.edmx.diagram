@@ -4,18 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8ec3ab2a6b2b41c18133c29e8e4bdea1" Name="Diagram1" ZoomLevel="93" >
-        <EntityTypeShape EntityType="AthleticSnap_Model.Patient" Width="1.5" PointX="3.625" PointY="5.75" />
-        <EntityTypeShape EntityType="AthleticSnap_Model.Doctor" Width="1.5" PointX="6.875" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="AthleticSnap_Model.Radiographer" Width="1.5" PointX="5.25" PointY="5.75" />
-        <EntityTypeShape EntityType="AthleticSnap_Model.Customer_Service" Width="1.5" PointX="8.5" PointY="5.75" />
-        <EntityTypeShape EntityType="AthleticSnap_Model.Booking" Width="1.5" PointX="11.375" PointY="3.125" />
-        <EntityTypeShape EntityType="AthleticSnap_Model.CT_Scan" Width="1.5" PointX="10.875" PointY="6.5" />
-        <EntityTypeShape EntityType="AthleticSnap_Model.Consultation" Width="1.5" PointX="12.625" PointY="6.5" />
+      <Diagram DiagramId="8ec3ab2a6b2b41c18133c29e8e4bdea1" Name="Diagram1" ZoomLevel="57" >
+        <EntityTypeShape EntityType="AthleticSnap_Model.Patient" Width="1.5" PointX="7" PointY="6.875" />
+        <EntityTypeShape EntityType="AthleticSnap_Model.Doctor" Width="1.5" PointX="10.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AthleticSnap_Model.Radiographer" Width="1.5" PointX="8.625" PointY="6.875" />
+        <EntityTypeShape EntityType="AthleticSnap_Model.Customer_Service" Width="1.5" PointX="11.875" PointY="6.875" />
+        <EntityTypeShape EntityType="AthleticSnap_Model.Booking" Width="1.5" PointX="14.75" PointY="4.25" />
+        <EntityTypeShape EntityType="AthleticSnap_Model.CT_Scan" Width="1.5" PointX="14.25" PointY="7.625" />
+        <EntityTypeShape EntityType="AthleticSnap_Model.Consultation" Width="1.5" PointX="16" PointY="7.625" />
         <InheritanceConnector EntityType="AthleticSnap_Model.CT_Scan" />
         <InheritanceConnector EntityType="AthleticSnap_Model.Consultation" />
-        <EntityTypeShape EntityType="AthleticSnap_Model.Testimonial" Width="1.5" PointX="7.125" PointY="8.875" />
-        <EntityTypeShape EntityType="AthleticSnap_Model.Location" Width="1.5" PointX="13.375" PointY="3.125" />
+        <EntityTypeShape EntityType="AthleticSnap_Model.Testimonial" Width="1.5" PointX="10.5" PointY="10" />
+        <EntityTypeShape EntityType="AthleticSnap_Model.Location" Width="1.5" PointX="16.75" PointY="4.25" />
         <AssociationConnector Association="AthleticSnap_Model.PatientBooking" />
         <AssociationConnector Association="AthleticSnap_Model.RadiographerCT_Scan" />
         <AssociationConnector Association="AthleticSnap_Model.DoctorConsultation" />
@@ -27,13 +27,18 @@
         <AssociationConnector Association="AthleticSnap_Model.TestimonialDoctor" />
         <AssociationConnector Association="AthleticSnap_Model.TestimonialRadiographer" />
         <AssociationConnector Association="AthleticSnap_Model.BookingLocation" />
-        <EntityTypeShape EntityType="AthleticSnap_Model.User" Width="1.5" PointX="6.125" PointY="2.375" />
+        <EntityTypeShape EntityType="AthleticSnap_Model.C__MigrationHistory" Width="1.5" PointX="4" PointY="7.5" />
+        <EntityTypeShape EntityType="AthleticSnap_Model.AspNetRole" Width="1.5" PointX="7.875" PointY="3" />
+        <EntityTypeShape EntityType="AthleticSnap_Model.AspNetUserClaim" Width="1.5" PointX="12.375" PointY="4.125" />
+        <EntityTypeShape EntityType="AthleticSnap_Model.AspNetUserLogin" Width="1.5" PointX="12.375" PointY="1.5" />
+        <EntityTypeShape EntityType="AthleticSnap_Model.AspNetUser" Width="1.5" PointX="10.125" PointY="1.875" />
+        <AssociationConnector Association="AthleticSnap_Model.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="AthleticSnap_Model.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" />
+        <AssociationConnector Association="AthleticSnap_Model.AspNetUserRoles" />
         <InheritanceConnector EntityType="AthleticSnap_Model.Patient" />
         <InheritanceConnector EntityType="AthleticSnap_Model.Radiographer" />
         <InheritanceConnector EntityType="AthleticSnap_Model.Doctor" />
         <InheritanceConnector EntityType="AthleticSnap_Model.Customer_Service" />
-        <EntityTypeShape EntityType="AthleticSnap_Model.Role" Width="1.5" PointX="8.75" PointY="2.375" />
-        <AssociationConnector Association="AthleticSnap_Model.RoleUser" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
