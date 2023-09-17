@@ -2,13 +2,13 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/14/2023 19:00:54
+-- Date Created: 09/17/2023 21:25:47
 -- Generated from EDMX file: C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment\Models\AthleticSnap_Model.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [AthleticSnap];
+USE [aspnet-FIT5032_major_assignment-20230810073254];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
