@@ -22,8 +22,8 @@ C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_ass
 C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\Microsoft.Owin.Security.dll
 C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\Owin.dll
 C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\System.Web.Http.dll
-C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\EntityFramework.dll
 C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\EntityFramework.dll
 C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
 C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\System.Web.Http.WebHost.dll
 C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
@@ -45,8 +45,8 @@ C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_ass
 C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
 C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\Microsoft.Owin.Security.xml
 C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\System.Web.Http.xml
-C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\EntityFramework.xml
 C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\EntityFramework.xml
 C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.xml
 C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\System.Web.Http.WebHost.xml
 C:\Program Files\FIT5032\assignment\major_assignment_portfolio\FIT5032_major_assignment\FIT5032_major_assignment.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
